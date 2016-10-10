@@ -1,0 +1,39 @@
+.ListMarkers {
+  max-height: 300px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(0, 188, 212, 0.43);
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(0, 188, 212);
+    }
+  }
+
+  button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    height: 15px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline:none;
+    &:hover{
+      font-size: 14px;
+      color: red;
+    }
+    &::before {
+      content: 'x';
+    }
+
+  }
+}

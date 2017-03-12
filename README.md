@@ -16,7 +16,7 @@ The app is implemented with the Google Maps API.
 ##### Start mongo
   In console from mongo directory [C:\mongo\server\bin] type 
   ```
-  mongod --dbpath=\mongo\db
+  mongod
   ```
 ##### Connect to/Create database
   In console from mongo directory [C:\mongo\server\bin] type 
@@ -25,7 +25,21 @@ The app is implemented with the Google Maps API.
   ```
 
 ##### Run server
-  `npm run server`or`node server`
+  `npm run server` or `node server`
 
-## Links you may need:
-  1. Google Maps API: https://developers.google.com/maps/documentation/javascript/?hl=en
+
+## Project specification
+* ECMAScript 6
+* [Npm](https://www.npmjs.com/)
+* [ESLint](https://github.com/eslint/eslint)
+
+#### Back-end
+* [Express](https://github.com/expressjs/express)
+* [Mongoose](https://github.com/Automattic/mongoose)
+* [Passport](https://github.com/jaredhanson/passport)
+
+#### Front-end
+* [Webpack](https://webpack.github.io/)
+* [React](https://facebook.github.io/react/)
+* [Redux](http://redux.js.org/)
+* [Google Maps API](https://developers.google.com/maps/documentation/javascript/?hl=en)

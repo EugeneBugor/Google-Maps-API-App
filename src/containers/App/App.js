@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import { Link } from 'react-router';
 import userApi from '../../api/user';
 
-import {Drawer, AppBar, MenuItem, RaisedButton} from 'material-ui';
+import { Drawer, AppBar, MenuItem } from 'material-ui';
 
 import getMuiTheme from '../../../node_modules/material-ui/styles/getMuiTheme';
 import baseTheme from '../../../node_modules/material-ui/styles/baseThemes/lightBaseTheme';
@@ -50,19 +50,20 @@ export default class App extends Component {
         return (
             <div className="App">
                 <AppBar
-                    title={currentRouteName ? currentRouteName : "App"}
+                    title={currentRouteName ? currentRouteName : 'App'}
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     onTouchTap={this.handleToggle}
                 >
                     <Drawer width={200} openSecondary={false} open={this.state.open}>
                         <AppBar title="App" onTouchTap={this.handleToggle}/>
-                        <Link to={"/"}>
+                        <Link to="/">
                             <MenuItem>Home</MenuItem>
                         </Link>
-                        <Link to={"/map"}>
+
+                        <Link to="/map">
                             <MenuItem>Map</MenuItem>
                         </Link>
-                        <Link to={"/about"}>
+                        <Link to="/about">
                             <MenuItem>About</MenuItem>
                         </Link>
                         <Link to="/auth" onClick={this.onSign}>

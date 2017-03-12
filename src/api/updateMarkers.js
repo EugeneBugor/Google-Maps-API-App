@@ -13,9 +13,9 @@ export default {
             })
 
         })
-            .then(res=>res.json())
+            .then(res => res.json())
             .then(response => {
-                return Promise.resolve(response) //eslint-disable-line no-undef
+                return Promise.resolve(response)
             })
     }
 }

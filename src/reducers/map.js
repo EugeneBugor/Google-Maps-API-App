@@ -11,13 +11,13 @@ import {
     MARKER_ONAUTOCOMPLETE_FAIL,
 
     GET_MARKER_FROM_LIST_SUCCESS,
-} from '../constants/map';
+} from '../constants/map'
 
 const initialState = {
     error: '',
     fetching: false,
     markersData: {}
-};
+}
 
 export default function map(state = initialState, action) {
 
@@ -42,7 +42,7 @@ export default function map(state = initialState, action) {
             return {...state, error: action.payload}
 
         case GET_MARKER_FROM_LIST_SUCCESS:
-            return {...state, markersData: action.payload, err: ''};
+            return {...state, markersData: action.payload, err: ''}
         default:
             return state
     }

@@ -11,9 +11,9 @@ import {
     MARKER_ONAUTOCOMPLETE_FAIL,
 
     GET_MARKER_FROM_LIST_SUCCESS,
-} from '../constants/map';
+} from '../constants/map'
 
-import GM from '../api/GM';
+import GM from '../api/GM'
 
 export function getMarkerOnClick() {
     return function (dispatch) {
@@ -37,7 +37,7 @@ export function getMarkerOnAutocomplete() {
     return function (dispatch) {
         dispatch({
             type: MARKER_ONAUTOCOMPLETE_REQUEST
-        });
+        })
 
         GM.getMarkerOnAutocomplete()
             .then((markerData) => {
@@ -68,7 +68,7 @@ export function buildMap() {
     return function (dispatch) {
         dispatch({
             type: MAP_REQUEST
-        });
+        })
         setTimeout(() => {
             GM.drawMap()
                 .then(() => {
@@ -81,7 +81,7 @@ export function buildMap() {
                         type: MAP_FAIL,
                         payload: err
                     })
-                });
-        }, 1000);
+                })
+        }, 1000)
     }
 }

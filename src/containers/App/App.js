@@ -1,15 +1,15 @@
-import React, {Component, PropTypes} from 'react';
-import { Link } from 'react-router';
-import userApi from '../../api/user';
+import React, {Component, PropTypes} from 'react'
+import { Link } from 'react-router'
+import userApi from '../../api/user'
 
-import { Drawer, AppBar, MenuItem } from 'material-ui';
+import { Drawer, AppBar, MenuItem } from 'material-ui'
 
-import getMuiTheme from '../../../node_modules/material-ui/styles/getMuiTheme';
-import baseTheme from '../../../node_modules/material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from '../../../node_modules/material-ui/styles/getMuiTheme'
+import baseTheme from '../../../node_modules/material-ui/styles/baseThemes/lightBaseTheme'
 import injectTapEventPlugin from 'react-tap-event-plugin'
-injectTapEventPlugin();
+injectTapEventPlugin()
 
-import './App.less';
+import './App.less'
 
 export default class App extends Component {
     state = {
@@ -17,7 +17,12 @@ export default class App extends Component {
     };
 
     getChildContext() {
-        return {muiTheme: getMuiTheme(baseTheme)};
+        return {muiTheme: getMuiTheme(baseTheme)}
+    }
+
+    static propTypes = {
+        location: PropTypes.object,
+        children: PropTypes.object
     }
 
     static contextTypes = {
@@ -29,23 +34,24 @@ export default class App extends Component {
     };
 
     handleToggle = () => {
-        this.setState({open: !this.state.open});
+        this.setState({open: !this.state.open})
     };
 
     onSign = (e) => {
-        e.cancelBubble = true;
+        e.cancelBubble = true
         if (userApi.__isLoggedIn) {
-            window.localStorage.token = '';
-            userApi.__isLoggedIn = false;
+            window.localStorage.token = ''
+            userApi.__isLoggedIn = false
         }
     };
 
     render() {
-        const auth = window.localStorage.token && (userApi.__isLoggedIn == true);
+        const auth = window.localStorage.token && (userApi.__isLoggedIn == true)
+        const { location, children } = this.props
 
-        let currentRouteName = this.props.location.pathname.charAt(1).toUpperCase()
-            + this.props.location.pathname.slice(2);
-        let log = auth ? 'Log Out' : 'Log In';
+        let currentRouteName = location.pathname.charAt(1).toUpperCase()
+            + location.pathname.slice(2)
+        let log = auth ? 'Log Out' : 'Log In'
 
         return (
             <div className="App">
@@ -73,7 +79,7 @@ export default class App extends Component {
                     </Drawer>
                 </AppBar>
 
-                {this.props.children}
+                {children}
 
             </div>
         )

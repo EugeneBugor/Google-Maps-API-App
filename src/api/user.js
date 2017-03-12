@@ -18,19 +18,19 @@ export default {
                 password: password
             })
         })
-            .then(res=>res.json())
+            .then(res => res.json())
             .then(response => {
                 if (response.success) {
-                    window.localStorage.token = response.token;
+                    window.localStorage.token = response.token
 
-                    this.__isLoggedIn = true;
-                    this.__userData.username = response.userData.username;
-                    this.__userData.markers = response.userData.markers;
+                    this.__isLoggedIn = true
+                    this.__userData.username = response.userData.username
+                    this.__userData.markers = response.userData.markers
 
-                    return Promise.resolve(); //eslint-disable-line no-undef
+                    return Promise.resolve() //eslint-disable-line no-undef
                 } else if (!response.success) {
-                    this.__isLoggedIn = false;
-                    return Promise.reject(response);//eslint-disable-line no-undef
+                    this.__isLoggedIn = false
+                    return Promise.reject(response)//eslint-disable-line no-undef
                 }
             })
     },
@@ -40,21 +40,21 @@ export default {
             method: 'GET',
             headers: {'x-access-token': window.localStorage.token}
         })
-            .then(res=>res.json())
+            .then(res => res.json())
             .then(response => {
                 if (response.success) {
-                    this.__isLoggedIn = true;
-                    this.__userData.username = response.userData.username;
-                    this.__userData.markers = response.userData.markers;
+                    this.__isLoggedIn = true
+                    this.__userData.username = response.userData.username
+                    this.__userData.markers = response.userData.markers
 
                     return response
                 } else if (!response.success) {
-                    this.__isLoggedIn = false;
+                    this.__isLoggedIn = false
                     return response
                 }
             })
             .then(() => {
-                if (callback) callback();
+                if (callback) callback()
             })
     },
 }

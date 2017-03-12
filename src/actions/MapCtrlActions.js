@@ -7,10 +7,10 @@ import {
     GET_CLOSEST_OBJECT_SUCCESS,
     GET_CLOSEST_OBJECT_FAIL
 
-} from '../constants/mapCtrl';
+} from '../constants/mapCtrl'
 
-import updateMarkers from '../api/updateMarkers';
-import GM from '../api/GM';
+import updateMarkers from '../api/updateMarkers'
+import GM from '../api/GM'
 
 
 export function onUpdateMarker(username, markers) {
@@ -19,11 +19,11 @@ export function onUpdateMarker(username, markers) {
             type: UPDATE_MARKER_REQUEST
         })
         updateMarkers.update(username, markers)
-            .then((updatedMarkers)=> {
+            .then((updatedMarkers) => {
                 dispatch({
                     type: UPDATE_MARKER_SUCCESS,
                     payload: updatedMarkers
-                });
+                })
             })
             .catch(err => {
                 dispatch({
@@ -40,13 +40,13 @@ export function getClosestObjs(lat, lng, type) {
             type: GET_CLOSEST_OBJECT_REQUEST
         })
         GM.getClosestObjs(lat, lng, type)
-            .then((closestObjs)=> {
+            .then((closestObjs) => {
                 dispatch({
                     type: GET_CLOSEST_OBJECT_SUCCESS,
                     payload: closestObjs
                 })
             })
-            .catch((err)=> {
+            .catch((err) => {
                 dispatch({
                     type: GET_CLOSEST_OBJECT_FAIL,
                     payload: err

@@ -8,13 +8,13 @@ import {
     GET_CLOSEST_OBJECT_FAIL,
 
 
-} from '../constants/mapCtrl';
+} from '../constants/mapCtrl'
 
 const initialState = {
     updatedMarkers: [],
     closestObjs: [],
     error: ''
-};
+}
 
 export default function mapCtrl(state = initialState, action) {
 
@@ -36,6 +36,6 @@ export default function mapCtrl(state = initialState, action) {
 
 
         default:
-            return {...state};
+            return {...state}
     }
 }

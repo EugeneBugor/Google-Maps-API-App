@@ -29,3 +29,12 @@ The app is implemented with the Google Maps API.
 
 ## Links you may need:
   1. Google Maps API: https://developers.google.com/maps/documentation/javascript/?hl=en
+
+
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
